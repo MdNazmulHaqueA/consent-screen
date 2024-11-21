@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consent Form</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="consent-form-container">
+      <h1 class="consent-form-header">
+        Please select the providers you would like to receive a quote from
+      </h1>
+      <p class="consent-text">
+        Choosing multiple providers will increase your chance to find a great
+        deal
+      </p>
+
+      <form>
+        <!-- Provider Options -->
+        <div class="provider-box">
+          <input type="checkbox" id="provider1" class="checkbox" />
+          <label for="provider1">
+            <span class="provider-content">
+              <span>Service Provider 1</span>
+              <img src="images/icon.png" alt="Provider Icon" />
+            </span>
+          </label>
+        </div>
+
+        <div class="provider-box">
+          <input type="checkbox" id="provider2" class="checkbox" />
+          <label for="provider2">
+            <span class="provider-content">
+              <span>Service Provider 2</span>
+              <img src="images/icon.png" alt="Provider Icon" />
+            </span>
+          </label>
+        </div>
+
+        <div class="provider-box">
+          <input type="checkbox" id="provider3" class="checkbox" />
+          <label for="provider3">
+            <span class="provider-content">
+              <span>Service Provider 3</span>
+              <img src="images/icon.png" alt="Provider Icon" />
+            </span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+
+      <!-- Disclaimer -->
+      <p class="disclaimer">
+        <span>By clicking Submit,</span> I certify that I have provided my legal
+        name and my own phone number. I agree to the Terms and Conditions and
+        Privacy Policy and authorize TopTopLeads or partners selected above to
+        contact me by email or phone. This includes automated technologies,
+        pre-recorded messages, and text messages, even if my phone is listed on
+        a Do Not Call list.
+      </p>
+    </div>
+  </body>
+  <!-- JavaScript Code -->
+  <script>
+    const checkboxes = document.querySelectorAll('.checkbox');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', event => {
+        const parentBox = checkbox.closest('.provider-box');
+        if (checkbox.checked) {
+          parentBox.style.backgroundColor = '#daf0df';
+        } else {
+          parentBox.style.backgroundColor = '#f0f2f4';
+        }
+      });
+    });
+  </script>
+</html>
